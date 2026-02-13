@@ -1,0 +1,46 @@
+---
+title: Understanding Static Site Generation
+description: Explore the benefits of static site generation and how to deploy to GitHub Pages
+date: '2024-01-20'
+tags:
+  - ssg
+  - deployment
+  - github-pages
+---
+
+# Understanding Static Site Generation
+
+Static Site Generation (SSG) pre-renders your pages at build time, resulting in fast, secure, and scalable websites.
+
+## Benefits of SSG
+
+1. **Performance**: Pre-rendered HTML loads instantly
+2. **Security**: No server-side code execution
+3. **Scalability**: CDN-friendly static files
+4. **Cost**: Free hosting on platforms like GitHub Pages
+
+## How It Works
+
+Nuxt's `generate` command creates static files for all your routes:
+
+```bash
+npm run generate
+```
+
+This outputs to the `.output/public` directory, ready for deployment.
+
+## GitHub Pages Deployment
+
+GitHub Pages is perfect for static sites:
+
+1. Push your code to GitHub
+2. Set up GitHub Actions for automatic deployment
+3. Your site is live at `username.github.io/repo-name`
+
+## Pro Tip
+
+Use environment variables to handle base URLs for subpath deployments:
+
+```bash
+NUXT_APP_BASE_URL=/my-blog/ npm run generate
+```

@@ -1,0 +1,45 @@
+---
+title: Getting Started with Nuxt and MDX
+description: Learn how to build a static blog using Nuxt 3, MDX, and GitHub Pages
+date: '2024-01-15'
+tags:
+  - nuxt
+  - mdx
+  - tutorial
+---
+
+# Getting Started with Nuxt and MDX
+
+This is my first blog post using Nuxt Content with MDX support.
+
+## Why Nuxt Content?
+
+Nuxt Content is a powerful file-based CMS that makes it easy to write and manage content:
+
+- Write in Markdown or MDX
+- Query content with a MongoDB-like API
+- Auto-generate navigation and table of contents
+- Vue components in your content
+
+## Using Vue Components
+
+You can use Vue components directly in your MDX files:
+
+::alert{color="blue"}
+This is an alert component embedded in MDX!
+::
+
+::counter
+::
+
+## Code Examples
+
+```javascript
+export default defineNuxtConfig({
+  modules: ['@nuxt/content'],
+})
+```
+
+## What's Next?
+
+Check out the [official documentation](https://content.nuxt.com) to learn more about Nuxt Content.
