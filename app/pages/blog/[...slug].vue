@@ -2,9 +2,15 @@
 const route = useRoute()
 const slug = route.params.slug as string[]
 
-const { data: post } = await useAsyncData('post-' + slug.join('/'), () => {
-  return queryCollection('blog').path('/blog/' + slug.join('/')).first()
-})
+const { data: post } = await useAsyncData(
+  'post-' + slug.join('/'),
+  () => queryCollection('blog').path('/blog/' + slug.join('/')).first(),
+  {
+    getCachedData(key) {
+      return useNuxtApp().payload.data[key]
+    },
+  }
+)
 
 if (!post.value) {
   throw createError({ statusCode: 404, statusMessage: 'Post not found', fatal: true })
